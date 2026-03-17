@@ -29,8 +29,8 @@ import {
 
 import { GoogleGenAI } from "@google/genai";
 
-const UXFORGE_LOGO = import.meta.env.VITE_UXFORGE_LOGO_URL;
-const THUMBFORGE_LOGO = import.meta.env.VITE_THUMBFORGE_LOGO_URL;
+const UXFORGE_LOGO = import.meta.env.VITE_UXFORGE_LOGO_URL || "https://ufvsgqkqlojmcwsvwvwa.supabase.co/storage/v1/object/sign/jp/ChatGPT%20Image%20Mar%2017,%202026,%2004_07_06%20PM.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNzgyYjhjMS1mODhlLTQ0YzAtOTRkZS1jYjQyMWYxMzE1NjEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJqcC9DaGF0R1BUIEltYWdlIE1hciAxNywgMjAyNiwgMDRfMDdfMDYgUE0ucG5nIiwiaWF0IjoxNzczNzQzODcwLCJleHAiOjMwNTczNzE1MDcwfQ.KdJ37_EA2T4f3jmNaRYpsid9oCmB0CoA_SaFSzxO9zU";
+const THUMBFORGE_LOGO = import.meta.env.VITE_THUMBFORGE_LOGO_URL || "https://ufvsgqkqlojmcwsvwvwa.supabase.co/storage/v1/object/sign/jp/WhatsApp%20Image%202026-03-16%20at%204.14.50%20PM.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNzgyYjhjMS1mODhlLTQ0YzAtOTRkZS1jYjQyMWYxMzE1NjEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJqcC9XaGF0c0FwcCBJbWFnZSAyMDI2LTAzLTE2IGF0IDQuMTQuNTAgUE0uanBlZyIsImlhdCI6MTc3Mzc0NDQ3OCwiZXhwIjo0NjE5Mjg4MTcwMDc4fQ.vXNDmZcOGQuahkR2BAPNPm9WOM2vweLoi7XDNfjxDok";
 
 // Connect the provided Gemini API Key
 const apiKey = process.env.GEMINI_API_KEY || '';
