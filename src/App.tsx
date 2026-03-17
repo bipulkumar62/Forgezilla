@@ -33,7 +33,8 @@ const UXFORGE_LOGO = import.meta.env.VITE_UXFORGE_LOGO_URL;
 const THUMBFORGE_LOGO = import.meta.env.VITE_THUMBFORGE_LOGO_URL;
 
 // Connect the provided Gemini API Key
-const genAI = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const apiKey = process.env.GEMINI_API_KEY || '';
+const genAI = apiKey ? new GoogleGenAI({ apiKey }) : null;
 
 export default function App() {
   const [prompt, setPrompt] = useState('');
@@ -74,6 +75,10 @@ export default function App() {
     setGeneratedCode('');
 
     try {
+      if (!genAI) {
+        throw new Error('Gemini API key is not configured. Please set GEMINI_API_KEY in your environment variables.');
+      }
+
       const systemPrompt = `You are an expert UI/UX designer and frontend developer. 
       Generate a modern, clean, and responsive HTML/CSS layout for a ${type} based on the user's description.
       Use Tailwind CSS for styling. Return ONLY the HTML code block. 
